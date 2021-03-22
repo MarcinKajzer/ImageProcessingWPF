@@ -1,0 +1,51 @@
+﻿<Window x:Class="ImageProcessing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageProcessing"
+        xmlns:vm ="clr-namespace:ImageProcessing.ViewModel"
+        mc:Ignorable="d"
+        Title="Image Processing" Height="700" Width="800">
+    
+    <Window.DataContext>
+        <vm:ImageProcessingViewModel/>
+    </Window.DataContext>
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="500" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <TextBlock FontSize="10" Padding="10" FontWeight="Bold" >
+                    Synchrous executing time: <TextBlock Text="{Binding Path=ImageProcessingTime_InMiliseconds}"></TextBlock> miliseconds
+                </TextBlock>
+                <TextBlock FontSize="10" Padding="10" FontWeight="Bold" >
+                    Asynchrous executing time: <TextBlock Text="{Binding Path=ImageAsyncProcessingTime_InMiliseconds}"></TextBlock> miliseconds
+                </TextBlock>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                <Button Command="{Binding Path=ReadFileCommand}" Height="30" Width="130" Margin="10" >Choose image</Button>
+                <Button Command="{Binding Path=ToMainColorsCommand}" Height="30" Width="130" Margin="10" >Process synchrnously</Button>
+                <Button Command="{Binding Path=ToMainColorsAsyncCommand}" Height="30" Width="130" Margin="10" >Process asynchrnously</Button>
+                <Button Command="{Binding Path=SaveFileCommand}" Height="30" Width="130" Margin="10" >Save image</Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0">
+                <TextBlock Margin="10">Before:</TextBlock>
+                <Image Source="{Binding Path=ImageBeforeProcessing}" Width="300" Height="200"/>
+                <TextBlock Margin="10">After:</TextBlock>
+                <Image Source="{Binding Path=ImageAfterProcessing}" Width="300" Height="200"/>
+            </StackPanel>
+            
+
+        </Grid>
+    </ScrollViewer>
+
+</Window>
