@@ -10,11 +10,11 @@
 
    - jeżeli w poprzednim kroku wybraliśmy:
 
-    * R to nowym kolorem jest #FF0000
+       * R to nowym kolorem jest #FF0000
 
-    * G to nowym kolorem jest #00FF00
+       * G to nowym kolorem jest #00FF00
 
-    * B to nowym kolorem jest #0000FF
+       * B to nowym kolorem jest #0000FF
 
    Napisać wersję synchroniczną i asynchroniczną tej funkcji, dbając o możliwie największą wydajność obliczeniową.
 
