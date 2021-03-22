@@ -23,18 +23,18 @@
 
             <StackPanel Grid.Row="0" Grid.Column="0">
                 <TextBlock FontSize="10" Padding="10" FontWeight="Bold" >
-                    Synchrous executing time: <TextBlock Text="{Binding Path=ImageProcessingTime_InMiliseconds}"></TextBlock> miliseconds
+                    Synchronous executing time: <TextBlock Text="{Binding Path=ImageProcessingTime_InMiliseconds}"></TextBlock> miliseconds
                 </TextBlock>
                 <TextBlock FontSize="10" Padding="10" FontWeight="Bold" >
-                    Asynchrous executing time: <TextBlock Text="{Binding Path=ImageAsyncProcessingTime_InMiliseconds}"></TextBlock> miliseconds
+                    Asynchronous executing time: <TextBlock Text="{Binding Path=ImageAsyncProcessingTime_InMiliseconds}"></TextBlock> miliseconds
                 </TextBlock>
             </StackPanel>
 
 
             <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
                 <Button Command="{Binding Path=ReadFileCommand}" Height="30" Width="130" Margin="10" >Choose image</Button>
-                <Button Command="{Binding Path=ToMainColorsCommand}" Height="30" Width="130" Margin="10" >Process synchrnously</Button>
-                <Button Command="{Binding Path=ToMainColorsAsyncCommand}" Height="30" Width="130" Margin="10" >Process asynchrnously</Button>
+                <Button Command="{Binding Path=ToMainColorsCommand}" Height="30" Width="130" Margin="10" >Process synchronously</Button>
+                <Button Command="{Binding Path=ToMainColorsAsyncCommand}" Height="30" Width="130" Margin="10" >Process asynchronously</Button>
                 <Button Command="{Binding Path=SaveFileCommand}" Height="30" Width="130" Margin="10" >Save image</Button>
             </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="0">
